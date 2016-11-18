@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
-import { FeaturedProduct } from '../product/featuredproduct.model';
+import { FeaturedProduct } from '../../models/featuredproduct.model';
 
 
 @Component({
