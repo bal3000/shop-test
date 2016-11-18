@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Http, Response } from '@angular/http';
 import { FeaturedProduct } from '../product/featuredproduct.model';
+
+
 @Component({
   selector: 'app-featuredproducts',
   templateUrl: './featuredproducts.component.html',
@@ -7,17 +10,18 @@ import { FeaturedProduct } from '../product/featuredproduct.model';
 })
 export class FeaturedproductsComponent implements OnInit {
   products: FeaturedProduct[];
-  constructor() {
-    this.products = [
-      new FeaturedProduct("test 1"),
-      new FeaturedProduct("test 2"),
-      new FeaturedProduct("test 3"),
-      new FeaturedProduct("test 4"),
-      new FeaturedProduct("test 5")
-    ];
+
+  constructor(public http: Http) {
+    this.products = [];
   }
 
   ngOnInit() {
+    this.http.get("/json/products.json")
+      .subscribe((res: Response) => {
+        this.products = res.json();
+      }, (err: Error) => {
+        console.log(err.message);
+      });
   }
 
 }

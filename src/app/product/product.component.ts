@@ -14,4 +14,8 @@ export class ProductComponent implements OnInit {
   ngOnInit() {
   }
 
+  addToBasket(event: Event): void {
+    event.preventDefault();
+    console.log(this.product);
+  }
 }
