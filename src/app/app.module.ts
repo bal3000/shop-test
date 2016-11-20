@@ -10,6 +10,7 @@ import { ProductComponent } from './components/product/product.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
+import { BasketComponent } from './components/basket/basket.component';
 import { ShortenPipe } from './pipes/shorten.pipe';
 
 import { BasketService } from './services/basketservice.service';
@@ -23,7 +24,8 @@ import { BasketService } from './services/basketservice.service';
     NavbarComponent,
     FooterComponent,
     HeaderComponent,
-    ShortenPipe
+    ShortenPipe,
+    BasketComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,11 @@
+<div *ngIf="basketService.totalQuantity > 0" class="basket-container">
+  <div class="bask">
+    <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+    <!--<span class="quantity"></span>-->
+  </div>
+  <div class="details">
+    <span>Quantity: {{basketService.totalQuantity}}</span>
+    <span>Total: {{basketService.totalPrice}}</span>
+    <a href="#" (click)="clearBasket($event)">Clear</a>
+  </div>
+</div>

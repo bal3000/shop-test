@@ -11,7 +11,13 @@ export class BasketService implements IBasketService {
 
   get totalPrice(): number {
     let total: number = 0.00;
-    this.products.forEach((p) => total += p.price);
+    this.products.forEach((p) => total += (p.price * p.quantity));
+    return total;
+  }
+
+  get totalQuantity(): number {
+    let total: number = 0;
+    this.products.forEach((p) => total += p.quantity);
     return total;
   }
 
@@ -27,5 +33,9 @@ export class BasketService implements IBasketService {
     else {
       existing.quantity += 1;
     }
+  }
+
+  clearBasket(): void {
+    this.products = [];
   }
 }
