@@ -3,6 +3,7 @@ export class FeaturedProduct {
     price: number;
     description: string;
     image: string;
+    quantity: number;
     constructor(public name: string) {
 
     }

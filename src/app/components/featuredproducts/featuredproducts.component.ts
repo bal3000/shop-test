@@ -11,7 +11,7 @@ import { FeaturedProduct } from '../../models/featuredproduct.model';
 export class FeaturedproductsComponent implements OnInit {
   products: FeaturedProduct[];
 
-  constructor(public http: Http) {
+  constructor(private http: Http) {
     this.products = [];
   }
 
