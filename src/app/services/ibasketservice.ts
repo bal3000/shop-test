@@ -1,8 +1,8 @@
-import { FeaturedProduct } from '../models/featuredproduct.model';
+import { IProduct } from '../models/iproduct.interface';
 export interface IBasketService {
-    products: FeaturedProduct[];
+    products: IProduct[];
     totalPrice: number;
     totalQuantity: number;
-    addProduct(product: FeaturedProduct): void;
+    addProduct(product: IProduct): void;
     clearBasket(): void;
 }

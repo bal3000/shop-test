@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { FeaturedProduct } from '../models/featuredproduct.model';
+import { IProduct } from '../models/iproduct.interface';
 import { IBasketService } from './ibasketservice';
 
 @Injectable()
 export class BasketService implements IBasketService {
-  products: FeaturedProduct[];
+  products: IProduct[];
   constructor() {
     this.products = [];
   }
@@ -21,7 +21,7 @@ export class BasketService implements IBasketService {
     return total;
   }
 
-  addProduct(product: FeaturedProduct): void {
+  addProduct(product: IProduct): void {
     if (this.products == null) {
       this.products = [];
     }
