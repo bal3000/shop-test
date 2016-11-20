@@ -16,6 +16,7 @@ import { ProductDetailComponent } from './components/productdetail/productdetail
 import { ShortenPipe } from './pipes/shorten.pipe';
 
 import { BasketService } from './services/basketservice.service';
+import { ProductService } from './services/productservice.service';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,7 @@ import { BasketService } from './services/basketservice.service';
       }
     ])
   ],
-  providers: [BasketService],
+  providers: [BasketService, ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

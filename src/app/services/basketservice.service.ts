@@ -4,10 +4,7 @@ import { IBasketService } from './ibasketservice';
 
 @Injectable()
 export class BasketService implements IBasketService {
-  products: IProduct[];
-  constructor() {
-    this.products = [];
-  }
+  products: IProduct[] = [];
 
   get totalPrice(): number {
     let total: number = 0.00;

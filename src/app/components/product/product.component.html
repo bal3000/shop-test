@@ -6,7 +6,7 @@
       <p>{{product.description | shorten:50}}</p>
       <p>
         <a href="#" (click)="addToBasket($event)" class="btn btn-primary">Buy Now!</a>
-        <a href="#" class="btn btn-default">More Info</a>
+        <a [routerLink]="['/product', product.id]" class="btn btn-default">More Info</a>
       </p>
     </div>
   </div>
