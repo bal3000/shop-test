@@ -8,7 +8,7 @@ import { FeaturedProduct } from '../../models/featuredproduct.model';
   templateUrl: './featuredproducts.component.html',
   styleUrls: ['./featuredproducts.component.css']
 })
-export class FeaturedproductsComponent implements OnInit {
+export class FeaturedProductsComponent implements OnInit {
   products: FeaturedProduct[];
 
   constructor(private http: Http) {

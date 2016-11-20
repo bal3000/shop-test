@@ -2,15 +2,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { StorefrontComponent } from './components/storefront/storefront.component';
-import { FeaturedproductsComponent } from './components/featuredproducts/featuredproducts.component';
+import { StoreFrontComponent } from './components/storefront/storefront.component';
+import { FeaturedProductsComponent } from './components/featuredproducts/featuredproducts.component';
 import { ProductComponent } from './components/product/product.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { BasketComponent } from './components/basket/basket.component';
+import { ProductDetailComponent } from './components/productdetail/productdetail.component';
 import { ShortenPipe } from './pipes/shorten.pipe';
 
 import { BasketService } from './services/basketservice.service';
@@ -18,19 +20,35 @@ import { BasketService } from './services/basketservice.service';
 @NgModule({
   declarations: [
     AppComponent,
-    StorefrontComponent,
-    FeaturedproductsComponent,
+    StoreFrontComponent,
+    FeaturedProductsComponent,
     ProductComponent,
     NavbarComponent,
     FooterComponent,
     HeaderComponent,
     ShortenPipe,
-    BasketComponent
+    BasketComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot([
+      {
+        path: 'home',
+        component: StoreFrontComponent
+      },
+      {
+        path: 'product/:id',
+        component: ProductDetailComponent
+      },
+      {
+        path: '',
+        redirectTo: '/home',
+        pathMatch: 'full'
+      }
+    ])
   ],
   providers: [BasketService],
   bootstrap: [AppComponent]
