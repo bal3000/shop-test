@@ -1,0 +1,11 @@
+--Basket Service - store add to basket products there + inject - done
+--Routing for product details view + product details component - done
+
+
+Basket component - flesh out into one for the side of the page
+animations - more details animation
+route animations
+Guard routes
+.net core webapi for the products 
+link up auth between webapi and guard service
+db for products

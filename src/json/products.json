@@ -4,27 +4,31 @@
         "name": "Test 1",
         "price": 2.00,
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet hendrerit nulla. Proin consectetur lorem id elementum finibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas aliquet tincidunt turpis consectetur feugiat. Praesent id quam bibendum, suscipit nibh ac, euismod nisi. Suspendisse posuere ipsum sed risus gravida convallis eu eget odio. Suspendisse dictum hendrerit tempor. Aliquam quis elementum enim, eu pellentesque ipsum.",
-        "image": "http://placehold.it/800x500"
+        "image": "http://placehold.it/800x500",
+        "summary": [ "point 1", "point 2", "point 3" ]
     },
     {
         "id": "2",
         "name": "Test 2",
         "price": 4.00,
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet hendrerit nulla. Proin consectetur lorem id elementum finibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas aliquet tincidunt turpis consectetur feugiat. Praesent id quam bibendum, suscipit nibh ac, euismod nisi. Suspendisse posuere ipsum sed risus gravida convallis eu eget odio. Suspendisse dictum hendrerit tempor. Aliquam quis elementum enim, eu pellentesque ipsum.",
-        "image": "http://placehold.it/800x500"
+        "image": "http://placehold.it/800x500",
+        "summary": [ "point 1", "point 2", "point 3" ]
     },
     {
         "id": "3",
         "name": "Test 3",
         "price": 1.40,
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet hendrerit nulla. Proin consectetur lorem id elementum finibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas aliquet tincidunt turpis consectetur feugiat. Praesent id quam bibendum, suscipit nibh ac, euismod nisi. Suspendisse posuere ipsum sed risus gravida convallis eu eget odio. Suspendisse dictum hendrerit tempor. Aliquam quis elementum enim, eu pellentesque ipsum.",
-        "image": "http://placehold.it/800x500"
+        "image": "http://placehold.it/800x500",
+        "summary": [ "point 1", "point 2", "point 3" ]
     },
     {
         "id": "4",
         "name": "Test 4",
         "price": 5.50,
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet hendrerit nulla. Proin consectetur lorem id elementum finibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas aliquet tincidunt turpis consectetur feugiat. Praesent id quam bibendum, suscipit nibh ac, euismod nisi. Suspendisse posuere ipsum sed risus gravida convallis eu eget odio. Suspendisse dictum hendrerit tempor. Aliquam quis elementum enim, eu pellentesque ipsum.",
-        "image": "http://placehold.it/800x500"
+        "image": "http://placehold.it/800x500",
+        "summary": [ "point 1", "point 2", "point 3" ]
     }
 ]

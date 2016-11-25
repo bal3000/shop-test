@@ -1,0 +1,10 @@
+.details {
+    overflow: hidden;
+    height: 100%;
+}
+img {
+    width: 274px;
+}
+.left { 
+    float: left;
+}

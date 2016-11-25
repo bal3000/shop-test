@@ -1,14 +1,26 @@
 <div *ngIf="product" class="row">
   <div class="col-lg-12">
-    <header class="jumbotron hero-spacer">
-      <h1>{{product.name}}</h1>
-      <p>{{product.description}}</p>
-      <a href="#" (click)="addToBasket($event)" class="btn btn-primary">Buy Now!</a>
-    </header>
 
-    <img src="{{product.image}}" alt="{{product.name}}">
-    <p>
-      <a href="#" (click)="goBack()" class="btn btn-primary">Back</a>
-    </p>
+  <div class="col-lg-3">
+    <img class="left" src="{{product.image}}" alt="{{product.name}}">
+  </div>
+
+  <div class="col-lg-6">
+    <h1>{{product.name}}</h1>
+    <ul>
+      <li *ngFor="let point of product.summary">{{point}}</li>
+    </ul>
+    <a href="#" *ngIf="showButton"  (click)="showDetails($event)" class="btn btn-default">More Info</a>
+    <div class="details" [@infoState]="detailState">
+      <p>{{product.description}}</p>
+    </div>  
+  </div>
+
+  <div class="col-lg-3">
+      <p>
+        <a href="#" (click)="addToBasket($event)" class="btn btn-primary">Buy Now!</a>
+        <a href="#" (click)="goBack()" class="btn btn-warning">Back</a>
+      </p>  
+  </div>
   </div>
 </div>
