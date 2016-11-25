@@ -1,7 +1,7 @@
 {
   "project": {
-    "version": "1.0.0-beta.11-webpack.8",
-    "name": "shop-test"
+    "version": "1.0.0-beta.21",
+    "name": "shop-test-update"
   },
   "apps": [
     {
@@ -9,7 +9,7 @@
       "outDir": "dist",
       "assets": [
         "assets",
-        "json"
+        "favicon.ico"
       ],
       "index": "index.html",
       "main": "main.ts",
@@ -23,8 +23,8 @@
       "scripts": [],
       "environments": {
         "source": "environments/environment.ts",
-        "prod": "environments/environment.prod.ts",
-        "dev": "environments/environment.dev.ts"
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
       }
     }
   ],
@@ -43,6 +43,17 @@
   "defaults": {
     "styleExt": "css",
     "prefixInterfaces": false,
-    "lazyRoutePrefix": "+"
+    "inline": {
+      "style": false,
+      "template": false
+    },
+    "spec": {
+      "class": false,
+      "component": true,
+      "directive": true,
+      "module": false,
+      "pipe": true,
+      "service": true
+    }
   }
 }

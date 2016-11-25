@@ -1,6 +1,6 @@
-import { browser, element, by } from 'protractor/globals';
+import { browser, element, by } from 'protractor';
 
-export class ShopTestPage {
+export class ShopTestUpdatePage {
   navigateTo() {
     return browser.get('/');
   }

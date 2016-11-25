@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { StoreFrontComponent } from './components/storefront/storefront.component';
@@ -17,6 +16,8 @@ import { ShortenPipe } from './pipes/shorten.pipe';
 
 import { BasketService } from './services/basketservice.service';
 import { ProductService } from './services/productservice.service';
+
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -35,21 +36,7 @@ import { ProductService } from './services/productservice.service';
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot([
-      {
-        path: 'home',
-        component: StoreFrontComponent
-      },
-      {
-        path: 'product/:id',
-        component: ProductDetailComponent
-      },
-      {
-        path: '',
-        redirectTo: '/home',
-        pathMatch: 'full'
-      }
-    ])
+    AppRoutingModule
   ],
   providers: [BasketService, ProductService],
   bootstrap: [AppComponent]

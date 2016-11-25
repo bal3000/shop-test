@@ -1,10 +1,10 @@
-import { ShopTestPage } from './app.po';
+import { ShopTestUpdatePage } from './app.po';
 
-describe('shop-test App', function() {
-  let page: ShopTestPage;
+describe('shop-test-update App', function() {
+  let page: ShopTestUpdatePage;
 
   beforeEach(() => {
-    page = new ShopTestPage();
+    page = new ShopTestUpdatePage();
   });
 
   it('should display message saying app works', () => {

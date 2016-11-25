@@ -1,5 +1,0 @@
-Basket Service - store add to basket products there + inject
-Basket component - show products from basket Service
-Routing for product details view + product details component
-.net core webapi for the products 
-db for products
