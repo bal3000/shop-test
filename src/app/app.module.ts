@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+
 import { StoreFrontComponent } from './components/storefront/storefront.component';
 import { FeaturedProductsComponent } from './components/featuredproducts/featuredproducts.component';
 import { ProductComponent } from './components/product/product.component';
@@ -12,6 +13,11 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { BasketComponent } from './components/basket/basket.component';
 import { ProductDetailComponent } from './components/productdetail/productdetail.component';
+
+import { AboutPageComponent } from './components/about-page/about-page.component';
+
+import { ContactPageComponent } from './components/contact-page/contact-page.component';
+
 import { ShortenPipe } from './pipes/shorten.pipe';
 
 import { BasketService } from './services/basketservice.service';
@@ -30,7 +36,9 @@ import { AppRoutingModule } from './app-routing.module';
     HeaderComponent,
     ShortenPipe,
     BasketComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    AboutPageComponent,
+    ContactPageComponent
   ],
   imports: [
     BrowserModule,
