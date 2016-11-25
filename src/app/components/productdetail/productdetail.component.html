@@ -8,9 +8,9 @@
   <div class="col-lg-6">
     <h1>{{product.name}}</h1>
     <ul>
-      <li *ngFor="let point of product.summary">{{point}}</li>
+      <li *ngFor="let point of product.summary" [@fadeIn]="'in'" (@fadeIn.start)="animationStarted($event)">{{point}}</li>
     </ul>
-    <a href="#" *ngIf="showButton"  (click)="showDetails($event)" class="btn btn-default">More Info</a>
+    <a href="#" *ngIf="showButton" (click)="showDetails($event)" class="btn btn-default">More Info</a>
     <div class="details" [@infoState]="detailState">
       <p>{{product.description}}</p>
     </div>  
