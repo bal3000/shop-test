@@ -9,16 +9,16 @@
                     <span class="icon-bar"></span>
                 </button>
       <!-- fall back in case js does not work.  but avoid href to routes as it causes to browser to go to the url instead of the js and a html5 push -->
-      <a class="navbar-brand" href="/home" [routerLink]="['/home']">Home</a>
+      <a class="navbar-brand" href="/home" [routerLink]="['/home']" routerLinkActive="active">Home</a>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li>
-          <a href="/about" [routerLink]="['/about']">About Us</a>
+          <a href="/about" [routerLink]="['/about']" routerLinkActive="active">About Us</a>
         </li>>
         <li>
-          <a href="/contact" [routerLink]="['/contact']">Contact Us</a>
+          <a href="/contact" [routerLink]="['/contact']" routerLinkActive="active">Contact Us</a>
         </li>
       </ul>
       <app-basket></app-basket>
