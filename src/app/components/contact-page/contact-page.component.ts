@@ -1,4 +1,4 @@
-import { Component, OnInit, trigger, state, style, transition, animate, keyframes, HostBinding } from '@angular/core';
+import { Component, OnInit, trigger, state, style, transition, animate, keyframes } from '@angular/core';
 
 @Component({
   selector: 'app-contact-page',
@@ -16,38 +16,10 @@ import { Component, OnInit, trigger, state, style, transition, animate, keyframe
           style({ opacity: 1, transform: 'translateX(0)', offset: 1.0 })
         ]))
       ])
-    ]),
-    trigger('routeAnimation', [
-      state('*',
-        style({
-          opacity: 1
-        })
-      ),
-      transition(':enter', [
-        style({
-          opacity: 0
-        }),
-        animate('1000ms ease-in')
-      ]),
-      transition(':leave', [
-        animate('100ms ease-out', style({
-          opacity: 0
-        }))
-      ])
     ])
   ]
 })
 export class ContactPageComponent implements OnInit {
-
-  @HostBinding('@routeAnimation') get routeAnimation() {
-    return true;
-  }
-
-  @HostBinding('style.display') get display() {
-    return 'block';
-  }
-
-
   nextP: number = 1;
 
   constructor() { }

@@ -18,12 +18,17 @@ import { AboutPageComponent } from './components/about-page/about-page.component
 
 import { ContactPageComponent } from './components/contact-page/contact-page.component';
 
+import { LoginComponent } from './components/login/login.component';
+
 import { ShortenPipe } from './pipes/shorten.pipe';
 
 import { BasketService } from './services/basketservice.service';
 import { ProductService } from './services/productservice.service';
 
 import { AppRoutingModule } from './app-routing.module';
+import { LoginRoutingModule } from './login-routing.module';
+
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -38,13 +43,16 @@ import { AppRoutingModule } from './app-routing.module';
     BasketComponent,
     ProductDetailComponent,
     AboutPageComponent,
-    ContactPageComponent
+    ContactPageComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AdminModule,
+    LoginRoutingModule
   ],
   providers: [BasketService, ProductService],
   bootstrap: [AppComponent]
