@@ -1,22 +1,26 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { FeaturedProduct } from '../models/featuredproduct.model';
+import { Observable } from 'rxjs/Rx';
+
 import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class ProductService {
 
   constructor(private http: Http) { }
 
-  getProducts(): Promise<FeaturedProduct[]> {
-    return this.http.get("/json/products.json")
-      .toPromise()
-      .then((res) => res.json() as FeaturedProduct[])
-      .catch(this.handleError);
+  getProducts(): Observable<FeaturedProduct[]> {
+    return this.http.get("http://localhost:50496/api/products")
+      .map((res) => res.json() as FeaturedProduct[])
+      .catch((error: any) => Observable.throw(error));
   }
-  getProduct(id: number): Promise<FeaturedProduct> {
-    return this.getProducts()
-      .then((ps) => ps.find((p) => p.id == id));
+  getProduct(id: number): Observable<FeaturedProduct> {
+    return this.http.get("http://localhost:50496/api/products/" + id)
+      .map((res) => res.json() as FeaturedProduct)
+      .catch(this.handleError);
   }
 
   private handleError(error: Response | any) {

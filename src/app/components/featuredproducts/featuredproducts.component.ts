@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Http, Response  } from '@angular/http';
+import { Http, Response } from '@angular/http';
 import { FeaturedProduct } from '../../models/featuredproduct.model';
+import { ProductService } from '../../services/productservice.service';
 
 
 @Component({
@@ -11,16 +12,16 @@ import { FeaturedProduct } from '../../models/featuredproduct.model';
 export class FeaturedProductsComponent implements OnInit {
   products: FeaturedProduct[];
 
-  constructor(private http: Http) {
+  constructor(private productService: ProductService) {
     this.products = [];
   }
 
   ngOnInit() {
-    this.http.get("/json/products.json")
-      .subscribe((res: Response) => {
-        this.products = res.json();
+    this.productService.getProducts()
+      .subscribe((res: FeaturedProduct[]) => {
+        this.products = res;
       }, (err: Error) => {
-        console.log(err.message);
+        console.log(err);
       });
   }
 
