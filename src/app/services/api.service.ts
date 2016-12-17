@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 
+//Ideally this service would grab its urls from a config json file, so no hard coding + it would then be renamed config.service
+
 @Injectable()
 export class ApiService {
   private baseUrl: string = "http://localhost:50496";
