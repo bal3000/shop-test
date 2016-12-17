@@ -32,7 +32,7 @@ export class BasketService implements IBasketService {
   getBasket(): Observable<IProduct[]> {
     return this.http.get("http://localhost:50496/api/basket")
       .map((res: any) => res.json() as IProduct[])
-      .catch((error: any) => Observable.throw(error));
+      .catch(this.handleError);
   }
 
   addProduct(product: IProduct): void {
@@ -45,24 +45,29 @@ export class BasketService implements IBasketService {
       product.quantity = 1;
       this.http.post("http://localhost:50496/api/basket", product)
         .map((res: any) => res.json() as IProduct)
-        .catch((error: any) => Observable.throw(error.json().error || 'Server error'))
+        .catch(this.handleError)
         .subscribe((product: IProduct) => { this.products.push(product) });
     }
     else {
       existing.quantity += 1;
       this.http.put("http://localhost:50496/api/basket/" + existing.id, existing)
-        .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+        .catch(this.handleError);
     }
   }
 
   clearBasket(): void {
     this.products.forEach(product => {
       this.http.delete("http://localhost:50496/api/basket/" + product.id)
-        .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+        .catch(this.handleError);
     });
 
     /*this.http.delete("http://localhost:50496/api/basket/deleteall")
       .catch((error: any) => Observable.throw(error.json().error || 'Server error'));*/
     this.products = [];
   }
+
+  private handleError(error: any) {
+    console.error(error);
+    return Observable.throw(error.json().error || 'Server error');
+  };
 }
