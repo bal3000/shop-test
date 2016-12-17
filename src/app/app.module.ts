@@ -24,6 +24,7 @@ import { ShortenPipe } from './pipes/shorten.pipe';
 
 import { BasketService } from './services/basketservice.service';
 import { ProductService } from './services/productservice.service';
+import { ApiService } from './services/api.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { LoginRoutingModule } from './login-routing.module';
@@ -54,7 +55,7 @@ import { AdminModule } from './admin/admin.module';
     AdminModule,
     LoginRoutingModule
   ],
-  providers: [BasketService, ProductService],
+  providers: [BasketService, ProductService, ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

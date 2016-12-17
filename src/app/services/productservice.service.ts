@@ -3,6 +3,8 @@ import { Http, Response } from '@angular/http';
 import { FeaturedProduct } from '../models/featuredproduct.model';
 import { Observable } from 'rxjs/Rx';
 
+import { ApiService } from './api.service';
+
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
@@ -10,15 +12,15 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class ProductService {
 
-  constructor(private http: Http) { }
+  constructor(private http: Http, private apiUrls: ApiService) { }
 
   getProducts(): Observable<FeaturedProduct[]> {
-    return this.http.get("http://localhost:50496/api/products")
+    return this.http.get(this.apiUrls.productsUrl)
       .map((res) => res.json() as FeaturedProduct[])
       .catch(this.handleRxError);
   }
   getProduct(id: number): Observable<FeaturedProduct> {
-    return this.http.get("http://localhost:50496/api/products/" + id)
+    return this.http.get(this.apiUrls.productByIdUrl + id)
       .map((res) => res.json() as FeaturedProduct)
       .catch(this.handleRxError);
   }
