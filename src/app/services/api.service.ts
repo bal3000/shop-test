@@ -26,15 +26,20 @@ export class ApiHelperService {
     return (errors) => {
       return errors
         .scan((acc, value) => {
-          return acc + 1;
+          acc += 1;
+          if (acc < options.attempts) {
+            return acc;
+          }
+          else {
+            throw new Error(value);
+          }
         }, 0)
-        .takeWhile((acc: number) => acc < options.attempts)
         .delay(options.delay);
     };
   }
 
   public handleError(error: any) {
-    console.error(error);
-    return Observable.throw(error.json().error || 'Server error');
+    console.error(error.message);
+    return Observable.throw(error.message || 'Server error');
   }
 }
