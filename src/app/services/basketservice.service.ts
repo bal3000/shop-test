@@ -32,6 +32,7 @@ export class BasketService implements IBasketService {
 
   getBasket(): Observable<IProduct[]> {
     return this.http.get(this.apiUrls.basketUrl)
+      .retryWhen(this.retryRequest({ attempts: 3, delay: 1000 }))
       .map((res: any) => res.json() as IProduct[])
       .catch(this.handleError);
   }
@@ -65,6 +66,17 @@ export class BasketService implements IBasketService {
     /*this.http.delete("http://localhost:50496/api/basket/deleteall")
       .catch((error: any) => Observable.throw(error.json().error || 'Server error'));*/
     this.products = [];
+  }
+
+  private retryRequest(options) {
+    return (errors) => {
+      return errors
+        .scan((acc, value) => {
+          return acc + 1;
+        }, 0)
+        .takeWhile((acc: number) => acc < options.attempts)
+        .delay(options.delay);
+    };
   }
 
   private handleError(error: any) {
