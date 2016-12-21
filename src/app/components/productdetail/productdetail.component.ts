@@ -54,11 +54,14 @@ export class ProductDetailComponent implements OnInit {
   product: IProduct;
   detailState: string = 'inactive';
   showButton: boolean = true;
-  constructor(private productService: ProductService, private basketService: BasketService, private location: Location, private route: ActivatedRoute) { }
+  constructor(private productService: ProductService,
+              private basketService: BasketService,
+              private location: Location,
+              private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.params
-      .switchMap((params: Params) => this.productService.getProduct(+params["id"]))
+      .switchMap((params: Params) => this.productService.getProduct(+params['id']))
       .subscribe((p) => this.product = p);
   }
 
