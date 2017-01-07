@@ -15,6 +15,7 @@ export class ContactFormComponent implements OnInit {
       { "text": "General Help", "value": "General Help" },
       { "text": "Product Help", "value": "Product Help" }
     ]);
+    this.formModel.reason = "General Help";
   }
 
   ngOnInit() {

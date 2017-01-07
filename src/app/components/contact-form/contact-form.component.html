@@ -32,8 +32,8 @@
     </div>
 
     <div class="form-group">
-      <label for="lang">Reason for contact: </label>
-      <select class="form-control" name="lang" id="lang" [(ngModel)]="formModel.reason">
+      <label for="reason">Reason for contact: </label>
+      <select class="form-control" name="reason" id="reason" [(ngModel)]="formModel.reason">
         <option *ngFor="let reason of formModel.reasons" value="{{reason.value}}">{{reason.text}}</option>
       </select>
     </div>
