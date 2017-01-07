@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ContactForm } from '../../models/contactform.model';
 
 @Component({
   selector: 'app-contact-form',
@@ -7,13 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactFormComponent implements OnInit {
 
-  reasons: any[];
+  formModel: ContactForm;
 
   constructor() {
-    this.reasons = [
+    this.formModel = new ContactForm([
       { "text": "General Help", "value": "General Help" },
       { "text": "Product Help", "value": "Product Help" }
-    ];
+    ]);
   }
 
   ngOnInit() {

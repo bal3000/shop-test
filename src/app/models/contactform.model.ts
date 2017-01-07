@@ -6,7 +6,7 @@ export class ContactForm {
     public reason: string;
     public message: string;
 
-    constructor() {
+    constructor(public reasons: any[]) {
         this.firstName = "";
         this.lastName = "";
         this.email = "";
