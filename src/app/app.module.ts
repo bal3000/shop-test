@@ -13,6 +13,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { BasketComponent } from './components/basket/basket.component';
 import { ProductDetailComponent } from './components/productdetail/productdetail.component';
+import { ContactFormComponent } from './components/contact-form/contact-form.component';
 
 import { AboutPageComponent } from './components/about-page/about-page.component';
 
@@ -45,7 +46,8 @@ import { AdminModule } from './admin/admin.module';
     ProductDetailComponent,
     AboutPageComponent,
     ContactPageComponent,
-    LoginComponent
+    LoginComponent,
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,
